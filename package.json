@@ -22,6 +22,11 @@
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.7.0",
+    "@testing-library/react": "^10.0.4",
+    "babel-jest": "^26.0.1",
+    "babel-preset-gatsby": "^0.4.2",
+    "codecov": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
@@ -34,6 +39,9 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-plugin-react-redux": "^3.0.3",
     "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.0.1",
+    "jest-emotion": "^10.0.32",
     "lint-staged": "^10.2.2",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1"
@@ -51,7 +59,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest --collect-coverage --passWithNoTests",
+    "codecov": "codecov --token='aaad771a-8d08-49a5-b4c4-92d5ffb0398a'"
   },
   "repository": {
     "type": "git",
@@ -69,6 +78,11 @@
     "*.js": [
       "eslint --cache --fix",
       "pretty-quick --staged"
+    ]
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-test-env.js"
     ]
   }
 }

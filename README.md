@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/hartey11/posh-wash/branch/master/graph/badge.svg?token=WYB8AL99YM)](https://codecov.io/gh/hartey11/posh-wash)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a21c50f1-8f8f-4bf0-9bc0-39c936940d25/deploy-status)](https://app.netlify.com/sites/posh-wash/deploys)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
