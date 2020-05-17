@@ -1,46 +1,45 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+
+/** @jsx jsx */
+import { Global, css, jsx } from "@emotion/core"
+import { ThemeProvider } from "emotion-theming"
+
+import siteMetadata from "../hooks/useSiteMetadata"
+
+import globalStyles from "../styles/global"
+import mq from "../styles/media-query"
+import theme from "../styles/theme"
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { title } = siteMetadata()
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+    <ThemeProvider theme={theme}>
+      <Global styles={globalStyles} />
+      <Header siteTitle={title} />
+      <main
+        role="main"
+        css={css`
+          flex: 1;
+          padding-top: ${theme.header.spacer("mobile")}px;
+          ${mq("tablet-sm")} {
+            padding-top: ${theme.header.spacer("tablet-sm")}px;
+          }
+          ${mq("desktop")} {
+            padding-top: ${theme.header.spacer("desktop")}px;
+          }
+        `}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+        {children}
+      </main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </ThemeProvider>
   )
 }
 
