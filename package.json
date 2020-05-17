@@ -7,7 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@hartey11/gatsby-plugin-anchor-link": "^2.0.0",
+    "@hartey11/gatsby-plugin-anchor-link": "^1.2.1",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "gatsby": "^2.21.33",
