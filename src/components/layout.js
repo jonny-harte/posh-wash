@@ -11,6 +11,7 @@ import mq from "../styles/media-query"
 import theme from "../styles/theme"
 
 import Header from "./header"
+import { Footer } from "./footer/footer.component"
 
 const Layout = ({ children }) => {
   const { title } = siteMetadata()
@@ -34,11 +35,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </ThemeProvider>
   )
 }
