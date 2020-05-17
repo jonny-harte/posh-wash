@@ -193,6 +193,9 @@ type File implements Node {
   ): Date!
   childImageSharp: ImageSharp
   children: [Node!]!
+  childrenMenuContactJson: [MenuContactJson]
+  childrenMenuMainJson: [MenuMainJson]
+  childrenMenuSocialJson: [MenuSocialJson]
   ctime(
     "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
     difference: String
@@ -508,6 +511,121 @@ type Internal {
   type: String!
 }
 
+type MenuContactJson implements Node {
+  children: [Node!]!
+  cta: String
+  graphic: String
+  href: String
+  id: ID!
+  internal: Internal!
+  parent: Node
+  title: String
+}
+
+type MenuContactJsonConnection {
+  distinct(field: MenuContactJsonFieldsEnum!): [String!]!
+  edges: [MenuContactJsonEdge!]!
+  group(
+    field: MenuContactJsonFieldsEnum!
+    limit: Int
+    skip: Int
+  ): [MenuContactJsonGroupConnection!]!
+  nodes: [MenuContactJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type MenuContactJsonEdge {
+  next: MenuContactJson
+  node: MenuContactJson!
+  previous: MenuContactJson
+}
+
+type MenuContactJsonGroupConnection {
+  edges: [MenuContactJsonEdge!]!
+  field: String!
+  fieldValue: String
+  nodes: [MenuContactJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type MenuMainJson implements Node {
+  children: [Node!]!
+  cta: String
+  href: String
+  id: ID!
+  internal: Internal!
+  parent: Node
+  title: String
+}
+
+type MenuMainJsonConnection {
+  distinct(field: MenuMainJsonFieldsEnum!): [String!]!
+  edges: [MenuMainJsonEdge!]!
+  group(
+    field: MenuMainJsonFieldsEnum!
+    limit: Int
+    skip: Int
+  ): [MenuMainJsonGroupConnection!]!
+  nodes: [MenuMainJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type MenuMainJsonEdge {
+  next: MenuMainJson
+  node: MenuMainJson!
+  previous: MenuMainJson
+}
+
+type MenuMainJsonGroupConnection {
+  edges: [MenuMainJsonEdge!]!
+  field: String!
+  fieldValue: String
+  nodes: [MenuMainJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type MenuSocialJson implements Node {
+  children: [Node!]!
+  graphic: String
+  href: String
+  id: ID!
+  internal: Internal!
+  parent: Node
+  title: String
+}
+
+type MenuSocialJsonConnection {
+  distinct(field: MenuSocialJsonFieldsEnum!): [String!]!
+  edges: [MenuSocialJsonEdge!]!
+  group(
+    field: MenuSocialJsonFieldsEnum!
+    limit: Int
+    skip: Int
+  ): [MenuSocialJsonGroupConnection!]!
+  nodes: [MenuSocialJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type MenuSocialJsonEdge {
+  next: MenuSocialJson
+  node: MenuSocialJson!
+  previous: MenuSocialJson
+}
+
+type MenuSocialJsonGroupConnection {
+  edges: [MenuSocialJsonEdge!]!
+  field: String!
+  fieldValue: String
+  nodes: [MenuSocialJson!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
 type PageInfo {
   currentPage: Int!
   hasNextPage: Boolean!
@@ -515,6 +633,7 @@ type PageInfo {
   itemCount: Int!
   pageCount: Int!
   perPage: Int
+  totalCount: Int!
 }
 
 type Query {
@@ -536,6 +655,24 @@ type Query {
     skip: Int
     sort: ImageSharpSortInput
   ): ImageSharpConnection!
+  allMenuContactJson(
+    filter: MenuContactJsonFilterInput
+    limit: Int
+    skip: Int
+    sort: MenuContactJsonSortInput
+  ): MenuContactJsonConnection!
+  allMenuMainJson(
+    filter: MenuMainJsonFilterInput
+    limit: Int
+    skip: Int
+    sort: MenuMainJsonSortInput
+  ): MenuMainJsonConnection!
+  allMenuSocialJson(
+    filter: MenuSocialJsonFilterInput
+    limit: Int
+    skip: Int
+    sort: MenuSocialJsonSortInput
+  ): MenuSocialJsonConnection!
   allSite(
     filter: SiteFilterInput
     limit: Int
@@ -613,6 +750,9 @@ type Query {
     changeTime: DateQueryOperatorInput
     childImageSharp: ImageSharpFilterInput
     children: NodeFilterListInput
+    childrenMenuContactJson: MenuContactJsonFilterListInput
+    childrenMenuMainJson: MenuMainJsonFilterListInput
+    childrenMenuSocialJson: MenuSocialJsonFilterListInput
     ctime: DateQueryOperatorInput
     ctimeMs: FloatQueryOperatorInput
     dev: IntQueryOperatorInput
@@ -652,6 +792,34 @@ type Query {
     resolutions: ImageSharpResolutionsFilterInput
     sizes: ImageSharpSizesFilterInput
   ): ImageSharp
+  menuContactJson(
+    children: NodeFilterListInput
+    cta: StringQueryOperatorInput
+    graphic: StringQueryOperatorInput
+    href: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+    title: StringQueryOperatorInput
+  ): MenuContactJson
+  menuMainJson(
+    children: NodeFilterListInput
+    cta: StringQueryOperatorInput
+    href: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+    title: StringQueryOperatorInput
+  ): MenuMainJson
+  menuSocialJson(
+    children: NodeFilterListInput
+    graphic: StringQueryOperatorInput
+    href: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+    title: StringQueryOperatorInput
+  ): MenuSocialJson
   site(
     buildTime: DateQueryOperatorInput
     children: NodeFilterListInput
@@ -916,7 +1084,6 @@ type SitePluginPluginOptions {
   name: String
   path: String
   pathCheck: Boolean
-  short_name: String
   start_url: String
   theme_color: String
 }
@@ -1426,6 +1593,133 @@ enum FileFieldsEnum {
       reason: "Sorting on fields that need arguments to resolve is deprecated."
     )
   children
+  childrenMenuContactJson
+  childrenMenuContactJson___children
+  childrenMenuContactJson___children___children
+  childrenMenuContactJson___children___children___children
+  childrenMenuContactJson___children___children___id
+  childrenMenuContactJson___children___id
+  childrenMenuContactJson___children___internal___content
+  childrenMenuContactJson___children___internal___contentDigest
+  childrenMenuContactJson___children___internal___description
+  childrenMenuContactJson___children___internal___fieldOwners
+  childrenMenuContactJson___children___internal___ignoreType
+  childrenMenuContactJson___children___internal___mediaType
+  childrenMenuContactJson___children___internal___owner
+  childrenMenuContactJson___children___internal___type
+  childrenMenuContactJson___children___parent___children
+  childrenMenuContactJson___children___parent___id
+  childrenMenuContactJson___cta
+  childrenMenuContactJson___graphic
+  childrenMenuContactJson___href
+  childrenMenuContactJson___id
+  childrenMenuContactJson___internal___content
+  childrenMenuContactJson___internal___contentDigest
+  childrenMenuContactJson___internal___description
+  childrenMenuContactJson___internal___fieldOwners
+  childrenMenuContactJson___internal___ignoreType
+  childrenMenuContactJson___internal___mediaType
+  childrenMenuContactJson___internal___owner
+  childrenMenuContactJson___internal___type
+  childrenMenuContactJson___parent___children
+  childrenMenuContactJson___parent___children___children
+  childrenMenuContactJson___parent___children___id
+  childrenMenuContactJson___parent___id
+  childrenMenuContactJson___parent___internal___content
+  childrenMenuContactJson___parent___internal___contentDigest
+  childrenMenuContactJson___parent___internal___description
+  childrenMenuContactJson___parent___internal___fieldOwners
+  childrenMenuContactJson___parent___internal___ignoreType
+  childrenMenuContactJson___parent___internal___mediaType
+  childrenMenuContactJson___parent___internal___owner
+  childrenMenuContactJson___parent___internal___type
+  childrenMenuContactJson___parent___parent___children
+  childrenMenuContactJson___parent___parent___id
+  childrenMenuContactJson___title
+  childrenMenuMainJson
+  childrenMenuMainJson___children
+  childrenMenuMainJson___children___children
+  childrenMenuMainJson___children___children___children
+  childrenMenuMainJson___children___children___id
+  childrenMenuMainJson___children___id
+  childrenMenuMainJson___children___internal___content
+  childrenMenuMainJson___children___internal___contentDigest
+  childrenMenuMainJson___children___internal___description
+  childrenMenuMainJson___children___internal___fieldOwners
+  childrenMenuMainJson___children___internal___ignoreType
+  childrenMenuMainJson___children___internal___mediaType
+  childrenMenuMainJson___children___internal___owner
+  childrenMenuMainJson___children___internal___type
+  childrenMenuMainJson___children___parent___children
+  childrenMenuMainJson___children___parent___id
+  childrenMenuMainJson___cta
+  childrenMenuMainJson___href
+  childrenMenuMainJson___id
+  childrenMenuMainJson___internal___content
+  childrenMenuMainJson___internal___contentDigest
+  childrenMenuMainJson___internal___description
+  childrenMenuMainJson___internal___fieldOwners
+  childrenMenuMainJson___internal___ignoreType
+  childrenMenuMainJson___internal___mediaType
+  childrenMenuMainJson___internal___owner
+  childrenMenuMainJson___internal___type
+  childrenMenuMainJson___parent___children
+  childrenMenuMainJson___parent___children___children
+  childrenMenuMainJson___parent___children___id
+  childrenMenuMainJson___parent___id
+  childrenMenuMainJson___parent___internal___content
+  childrenMenuMainJson___parent___internal___contentDigest
+  childrenMenuMainJson___parent___internal___description
+  childrenMenuMainJson___parent___internal___fieldOwners
+  childrenMenuMainJson___parent___internal___ignoreType
+  childrenMenuMainJson___parent___internal___mediaType
+  childrenMenuMainJson___parent___internal___owner
+  childrenMenuMainJson___parent___internal___type
+  childrenMenuMainJson___parent___parent___children
+  childrenMenuMainJson___parent___parent___id
+  childrenMenuMainJson___title
+  childrenMenuSocialJson
+  childrenMenuSocialJson___children
+  childrenMenuSocialJson___children___children
+  childrenMenuSocialJson___children___children___children
+  childrenMenuSocialJson___children___children___id
+  childrenMenuSocialJson___children___id
+  childrenMenuSocialJson___children___internal___content
+  childrenMenuSocialJson___children___internal___contentDigest
+  childrenMenuSocialJson___children___internal___description
+  childrenMenuSocialJson___children___internal___fieldOwners
+  childrenMenuSocialJson___children___internal___ignoreType
+  childrenMenuSocialJson___children___internal___mediaType
+  childrenMenuSocialJson___children___internal___owner
+  childrenMenuSocialJson___children___internal___type
+  childrenMenuSocialJson___children___parent___children
+  childrenMenuSocialJson___children___parent___id
+  childrenMenuSocialJson___graphic
+  childrenMenuSocialJson___href
+  childrenMenuSocialJson___id
+  childrenMenuSocialJson___internal___content
+  childrenMenuSocialJson___internal___contentDigest
+  childrenMenuSocialJson___internal___description
+  childrenMenuSocialJson___internal___fieldOwners
+  childrenMenuSocialJson___internal___ignoreType
+  childrenMenuSocialJson___internal___mediaType
+  childrenMenuSocialJson___internal___owner
+  childrenMenuSocialJson___internal___type
+  childrenMenuSocialJson___parent___children
+  childrenMenuSocialJson___parent___children___children
+  childrenMenuSocialJson___parent___children___id
+  childrenMenuSocialJson___parent___id
+  childrenMenuSocialJson___parent___internal___content
+  childrenMenuSocialJson___parent___internal___contentDigest
+  childrenMenuSocialJson___parent___internal___description
+  childrenMenuSocialJson___parent___internal___fieldOwners
+  childrenMenuSocialJson___parent___internal___ignoreType
+  childrenMenuSocialJson___parent___internal___mediaType
+  childrenMenuSocialJson___parent___internal___owner
+  childrenMenuSocialJson___parent___internal___type
+  childrenMenuSocialJson___parent___parent___children
+  childrenMenuSocialJson___parent___parent___id
+  childrenMenuSocialJson___title
   children___children
   children___children___children
   children___children___children___children
@@ -2124,6 +2418,283 @@ enum ImageSharpFieldsEnum {
     )
 }
 
+enum MenuContactJsonFieldsEnum {
+  children
+  children___children
+  children___children___children
+  children___children___children___children
+  children___children___children___id
+  children___children___id
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___children___parent___children
+  children___children___parent___id
+  children___id
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  children___parent___children
+  children___parent___children___children
+  children___parent___children___id
+  children___parent___id
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___parent___parent___children
+  children___parent___parent___id
+  cta
+  graphic
+  href
+  id
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+  parent___children
+  parent___children___children
+  parent___children___children___children
+  parent___children___children___id
+  parent___children___id
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___children___parent___children
+  parent___children___parent___id
+  parent___id
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  parent___parent___children
+  parent___parent___children___children
+  parent___parent___children___id
+  parent___parent___id
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___parent___parent___children
+  parent___parent___parent___id
+  title
+}
+
+enum MenuMainJsonFieldsEnum {
+  children
+  children___children
+  children___children___children
+  children___children___children___children
+  children___children___children___id
+  children___children___id
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___children___parent___children
+  children___children___parent___id
+  children___id
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  children___parent___children
+  children___parent___children___children
+  children___parent___children___id
+  children___parent___id
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___parent___parent___children
+  children___parent___parent___id
+  cta
+  href
+  id
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+  parent___children
+  parent___children___children
+  parent___children___children___children
+  parent___children___children___id
+  parent___children___id
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___children___parent___children
+  parent___children___parent___id
+  parent___id
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  parent___parent___children
+  parent___parent___children___children
+  parent___parent___children___id
+  parent___parent___id
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___parent___parent___children
+  parent___parent___parent___id
+  title
+}
+
+enum MenuSocialJsonFieldsEnum {
+  children
+  children___children
+  children___children___children
+  children___children___children___children
+  children___children___children___id
+  children___children___id
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___children___parent___children
+  children___children___parent___id
+  children___id
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  children___parent___children
+  children___parent___children___children
+  children___parent___children___id
+  children___parent___id
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___parent___parent___children
+  children___parent___parent___id
+  graphic
+  href
+  id
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+  parent___children
+  parent___children___children
+  parent___children___children___children
+  parent___children___children___id
+  parent___children___id
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___children___parent___children
+  parent___children___parent___id
+  parent___id
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  parent___parent___children
+  parent___parent___children___children
+  parent___parent___children___id
+  parent___parent___id
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___parent___parent___children
+  parent___parent___parent___id
+  title
+}
+
 enum PotraceTurnPolicy {
   TURNPOLICY_BLACK
   TURNPOLICY_LEFT
@@ -2478,7 +3049,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
-  pluginCreator___pluginOptions___short_name
   pluginCreator___pluginOptions___start_url
   pluginCreator___pluginOptions___theme_color
   pluginCreator___resolve
@@ -2598,7 +3168,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___name
   pluginOptions___path
   pluginOptions___pathCheck
-  pluginOptions___short_name
   pluginOptions___start_url
   pluginOptions___theme_color
   resolve
@@ -2694,6 +3263,9 @@ input FileFilterInput {
   changeTime: DateQueryOperatorInput
   childImageSharp: ImageSharpFilterInput
   children: NodeFilterListInput
+  childrenMenuContactJson: MenuContactJsonFilterListInput
+  childrenMenuMainJson: MenuMainJsonFilterListInput
+  childrenMenuSocialJson: MenuSocialJsonFilterListInput
   ctime: DateQueryOperatorInput
   ctimeMs: FloatQueryOperatorInput
   dev: IntQueryOperatorInput
@@ -2849,6 +3421,64 @@ input InternalFilterInput {
   type: StringQueryOperatorInput
 }
 
+input MenuContactJsonFilterInput {
+  children: NodeFilterListInput
+  cta: StringQueryOperatorInput
+  graphic: StringQueryOperatorInput
+  href: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  parent: NodeFilterInput
+  title: StringQueryOperatorInput
+}
+
+input MenuContactJsonFilterListInput {
+  elemMatch: MenuContactJsonFilterInput
+}
+
+input MenuContactJsonSortInput {
+  fields: [MenuContactJsonFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
+}
+
+input MenuMainJsonFilterInput {
+  children: NodeFilterListInput
+  cta: StringQueryOperatorInput
+  href: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  parent: NodeFilterInput
+  title: StringQueryOperatorInput
+}
+
+input MenuMainJsonFilterListInput {
+  elemMatch: MenuMainJsonFilterInput
+}
+
+input MenuMainJsonSortInput {
+  fields: [MenuMainJsonFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
+}
+
+input MenuSocialJsonFilterInput {
+  children: NodeFilterListInput
+  graphic: StringQueryOperatorInput
+  href: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  parent: NodeFilterInput
+  title: StringQueryOperatorInput
+}
+
+input MenuSocialJsonFilterListInput {
+  elemMatch: MenuSocialJsonFilterInput
+}
+
+input MenuSocialJsonSortInput {
+  fields: [MenuSocialJsonFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
+}
+
 input NodeFilterInput {
   children: NodeFilterListInput
   id: StringQueryOperatorInput
@@ -2981,7 +3611,6 @@ input SitePluginPluginOptionsFilterInput {
   name: StringQueryOperatorInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
-  short_name: StringQueryOperatorInput
   start_url: StringQueryOperatorInput
   theme_color: StringQueryOperatorInput
 }

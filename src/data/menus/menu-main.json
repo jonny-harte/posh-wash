@@ -1,0 +1,10 @@
+[
+  { "cta": "Valeting", "href": "/valeting", "title": "Valeting Services" },
+  { "cta": "Wheels", "href": "/wheels", "title": "Wheels Services" },
+  { "cta": "Locations", "href": "/locations", "title": "Garage Locations" },
+  {
+    "cta": "Contact Us",
+    "href": "/contact-us",
+    "title": "Contact Details & Enquiry Form"
+  }
+]

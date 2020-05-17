@@ -1,0 +1,14 @@
+[
+  {
+    "cta": "020 7262 4050",
+    "graphic": "./graphics/phone-alt.svg",
+    "href": "tel:+442072624050",
+    "title": "Phone Us"
+  },
+  {
+    "cta": "info@poshwash.london",
+    "graphic": "./graphics/envelope.svg",
+    "href": "mailto:info@poshwash.london?subject=Posh Wash Enquiry",
+    "title": "Email Us"
+  }
+]
