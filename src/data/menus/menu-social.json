@@ -1,0 +1,12 @@
+[
+  {
+    "href": "https://www.facebook.com/poshwash.london",
+    "graphic": "./graphics/facebook-f.svg",
+    "title": "Like us on Facebook"
+  },
+  {
+    "href": "https://www.instagram.com/poshwash.london",
+    "graphic": "./graphics/instagram.svg",
+    "title": "Follow us on Instagram"
+  }
+]
