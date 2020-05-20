@@ -1,10 +1,7 @@
 import { css } from "@emotion/core"
 import normalize from "normalize.css"
-import Shevy from "shevyjs"
 
 import theme from "./theme"
-
-const shevy = new Shevy({ proximity: true })
 
 const global = css`
   ${normalize};
@@ -19,40 +16,43 @@ const global = css`
   }
 
   body {
-    ${shevy.body};
+    ${theme.body};
     font-family: ${theme.fontFamily.body};
   }
 
-  h1 {
-    ${shevy.h1}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     ${theme.heading};
+  }
+
+  h1 {
+    ${theme.h1}
   }
   h2 {
-    ${shevy.h2}
-    ${theme.heading};
+    ${theme.h2}
   }
   h3 {
-    ${shevy.h3}
-    ${theme.heading};
+    ${theme.h3}
   }
   h4 {
-    ${shevy.h4}
-    ${theme.heading};
+    ${theme.h4}
   }
   h5 {
-    ${shevy.h5}
-    ${theme.heading};
+    ${theme.h5}
   }
   h6 {
-    ${shevy.h6}
-    ${theme.heading};
+    ${theme.h6}
   }
 
   p,
   ol,
   ul,
   pre {
-    ${shevy.content}
+    ${theme.content}
   }
 
   #gatsby-focus-wrapper {
@@ -61,4 +61,5 @@ const global = css`
     min-height: 100vh;
   }
 `
+
 export default global
