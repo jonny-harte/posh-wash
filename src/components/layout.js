@@ -4,21 +4,18 @@ import PropTypes from "prop-types"
 import { Global, css, jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 
-import siteMetadata from "../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks"
+import { global, mediaQuery as mq, theme } from "../styles"
 
-import globalStyles from "../styles/global"
-import mq from "../styles/media-query"
-import theme from "../styles/theme"
-
-import Header from "./header"
+import Header from "./header/header.component"
 import { Footer } from "./footer/footer.component"
 
 const Layout = ({ children }) => {
-  const { title } = siteMetadata()
+  const { title } = useSiteMetadata()
 
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={globalStyles} />
+      <Global styles={global} />
       <Header siteTitle={title} />
       <main
         role="main"
@@ -26,7 +23,7 @@ const Layout = ({ children }) => {
           flex: 1;
           padding-top: ${theme.header.spacer("mobile")}px;
           ${mq("tablet-sm")} {
-            padding-top: ${theme.header.spacer("tablet-sm")}px;
+            padding-top: ${theme.header.spacer("tablet")}px;
           }
           ${mq("desktop")} {
             padding-top: ${theme.header.spacer("desktop")}px;
@@ -35,7 +32,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-      <Footer />
+      <Footer siteTitle={title} />
     </ThemeProvider>
   )
 }
