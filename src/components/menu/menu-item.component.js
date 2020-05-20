@@ -5,7 +5,7 @@ import AnchorLink from "@hartey11/gatsby-plugin-anchor-link"
 const MenuItem = ({ children, classes, clickEvent, href, target, title }) => (
   <li className={classes}>
     <AnchorLink
-      clickevent={clickEvent}
+      clickEvent={clickEvent}
       href={href}
       target={target}
       title={title}

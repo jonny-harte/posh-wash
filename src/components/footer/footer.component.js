@@ -5,14 +5,12 @@ import Logo from "react-inlinesvg"
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import menuJson from "../../hooks/useMenuJson"
-import siteMetadata from "../../hooks/useSiteMetadata"
+import { useMenuJson } from "../../hooks"
 
 import * as styles from "./footer.styles"
-
 import Menu from "../menu/menu-list.component"
 
-export const PureFooter = ({ menuItems, title }) => (
+export const PureFooter = ({ menuItems, siteTitle }) => (
   <footer role="contentinfo" css={styles.footer}>
     <div>
       <Menu label="Social Menu" items={menuItems} css={styles.menu} />
@@ -33,8 +31,8 @@ export const PureFooter = ({ menuItems, title }) => (
     </div>
 
     <div>
-      <Link to="/" title={title} css={styles.logo}>
-        <Logo className="logo" src="./graphics/logo-text.svg" />
+      <Link to="/" title={siteTitle} css={styles.logo}>
+        <Logo src="../../graphics/logo-text.svg" />
       </Link>
 
       <p css={styles.copyright}>© 1986 - {new Date().getFullYear()}</p>
@@ -45,14 +43,13 @@ export const PureFooter = ({ menuItems, title }) => (
 export const Footer = props => {
   const {
     allMenuSocialJson: { nodes: menuSocial },
-  } = menuJson()
-  const { title } = siteMetadata()
+  } = useMenuJson()
 
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <PureFooter {...props} menuItems={menuSocial} title={title} />
+  /* eslint-disable-next-line react/jsx-props-no-spreading */
+  return <PureFooter {...props} menuItems={menuSocial} />
 }
 
 PureFooter.propTypes = {
   menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-  title: PropTypes.string.isRequired,
+  siteTitle: PropTypes.string.isRequired,
 }

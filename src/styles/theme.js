@@ -1,4 +1,9 @@
+import Shevy from "shevyjs"
+
+const shevy = new Shevy({ proximity: true })
+
 const theme = {
+  ...shevy,
   breakpoints: {
     "mobile-md": 360,
     "mobile-lg": 480,
@@ -18,10 +23,10 @@ const theme = {
     body: "Montserrat, sans-serif",
   },
   header: {
-    borderWidth: 2,
+    borderWidth: 1,
     height: {
-      mobile: 45,
-      "tablet-sm": 50,
+      mobile: 49,
+      tablet: 49,
       desktop: 60,
     },
     spacer(breakpoint) {

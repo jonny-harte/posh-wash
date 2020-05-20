@@ -21,7 +21,7 @@ const MenuList = ({ className, clickEvent, items, label }) => (
           >
             {Object.prototype.hasOwnProperty.call(item, "graphic") && (
               <Icon
-                src={item.graphic}
+                src={`../../graphics/${item.graphic}.svg`}
                 css={css`
                   height: 100%;
                   width: 100%;

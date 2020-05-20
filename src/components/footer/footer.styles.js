@@ -1,14 +1,11 @@
+// TODO: Add Footer hover styling.
 import { css } from "@emotion/core"
-import Shevy from "shevyjs"
+import { mediaQuery as mq } from "../../styles"
 
-import mq from "../../styles/media-query"
-
-const { baseSpacing } = new Shevy({ proximity: true })
-
-export const address = css`
+export const address = theme => css`
   font-size: 12px;
   font-style: normal;
-  margin-top: 10px;
+  margin-top: ${theme.baseSpacing(0.5)};
   text-align: center;
 
   ${mq("mobile-lg")} {
@@ -32,7 +29,7 @@ export const footer = theme => css`
   ${theme.heading};
   background-color: #000;
   color: #fff;
-  padding: ${baseSpacing()};
+  padding: ${theme.baseSpacing()};
 
   ${mq("mobile-lg")} {
     align-items: center;
@@ -41,12 +38,15 @@ export const footer = theme => css`
     justify-content: space-between;
   }
   ${mq("tablet-sm")} {
-    padding: ${baseSpacing()} ${baseSpacing(2)};
+    padding: ${theme.baseSpacing()}};
+  }
+  ${mq("widescreen-sm")} {
+    padding: ${theme.baseSpacing()} ${theme.baseSpacing(2)};
   }
 
-  > div:not(:first-child) {
+  > div:not(:first-of-type) {
     ${mq("mobile-lg", true)} {
-      margin-top: ${baseSpacing()};
+      margin-top: ${theme.baseSpacing()};
     }
   }
 
