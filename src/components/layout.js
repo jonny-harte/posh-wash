@@ -5,7 +5,7 @@ import { Global, css, jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 
 import { useSiteMetadata } from "../hooks"
-import { global, mediaQuery as mq, theme } from "../styles"
+import { globalStyles, mediaQuery as mq, theme } from "../styles"
 
 import Header from "./header/header.component"
 import { Footer } from "./footer/footer.component"
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={global} />
+      <Global styles={globalStyles} />
       <Header siteTitle={title} />
       <main
         role="main"
