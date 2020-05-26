@@ -56,6 +56,6 @@ export const isGooglePlaceOpen = (date, periods) => {
   // Get time right now in the same format as google place data.
   const timeNow = setGooglePlaceTimeFormat(date.getHours(), date.getMinutes())
 
-  // If its before opening time or after closing return false.
-  return timeNow > openTime || timeNow < closeTime
+  // If its before opening time and after closing return false.
+  return timeNow > openTime && timeNow < closeTime
 }

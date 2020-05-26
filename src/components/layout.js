@@ -6,7 +6,7 @@ import { Global, css, jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 
 import { useSiteMetadata } from "../hooks"
-import { global, mediaQuery as mq, theme } from "../styles"
+import { globalStyles, mediaQuery as mq, theme } from "../styles"
 
 import Header from "./header/header.component"
 import { mapStateToProps } from "./header/menu-toggle.component"
@@ -17,7 +17,7 @@ const Layout = ({ children, isMenuOpen, scrollY }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={global({ isMenuOpen, scrollY, theme })} />
+      <Global styles={globalStyles({ isMenuOpen, scrollY, theme })} />
       <Header siteTitle={title} />
       <main
         role="main"

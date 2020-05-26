@@ -1,8 +1,12 @@
 import { css } from "@emotion/core"
 import normalize from "normalize.css"
 
-const global = ({ isMenuOpen, scrollY, theme }) => css`
+const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
   ${normalize};
+  :root {
+    --swiper-theme-color: #fff;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -62,6 +66,23 @@ const global = ({ isMenuOpen, scrollY, theme }) => css`
     flex-direction: column;
     min-height: 100vh;
   }
+
+  .swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    display: block;
+    height: 10px;
+    width: 10px;
+
+    &:not(.swiper-pagination-bullet-active) {
+      background-color: #fff;
+      opacity: 0.4;
+    }
+  }
 `
 
-export default global
+export default globalStyles

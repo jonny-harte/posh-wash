@@ -41,6 +41,7 @@ const theme = {
     letterSpacing: "0.1em",
     textTransform: "uppercase",
   },
+  maxWidth: 1300,
 }
 
 export default theme
