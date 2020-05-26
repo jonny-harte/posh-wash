@@ -1,9 +1,7 @@
 import { css } from "@emotion/core"
 import normalize from "normalize.css"
 
-import theme from "./theme"
-
-const globalStyles = css`
+const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
   ${normalize};
   :root {
     --swiper-theme-color: #fff;
@@ -22,6 +20,10 @@ const globalStyles = css`
   body {
     ${theme.body};
     font-family: ${theme.fontFamily.body};
+    left: ${isMenuOpen && `0`};
+    position: ${isMenuOpen && `fixed`};
+    right: ${isMenuOpen && `0`};
+    top: ${isMenuOpen && `-${scrollY}px`};
   }
 
   h1,

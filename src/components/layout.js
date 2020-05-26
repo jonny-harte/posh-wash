@@ -1,3 +1,4 @@
+import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
 /** @jsx jsx */
@@ -8,14 +9,15 @@ import { useSiteMetadata } from "../hooks"
 import { globalStyles, mediaQuery as mq, theme } from "../styles"
 
 import Header from "./header/header.component"
+import { mapStateToProps } from "./header/menu-toggle.component"
 import { Footer } from "./footer/footer.component"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isMenuOpen, scrollY }) => {
   const { title } = useSiteMetadata()
 
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={globalStyles} />
+      <Global styles={globalStyles({ isMenuOpen, scrollY, theme })} />
       <Header siteTitle={title} />
       <main
         role="main"
@@ -39,6 +41,9 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
+  scrollY: PropTypes.number.isRequired,
 }
 
-export default Layout
+// eslint-disable-next-line react-redux/prefer-separate-component-file
+export default connect(mapStateToProps)(Layout)
