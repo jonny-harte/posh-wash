@@ -1,9 +1,7 @@
 import { css } from "@emotion/core"
 import normalize from "normalize.css"
 
-import theme from "./theme"
-
-const global = css`
+const global = ({ isMenuOpen, scrollY, theme }) => css`
   ${normalize};
   html {
     box-sizing: border-box;
@@ -18,6 +16,10 @@ const global = css`
   body {
     ${theme.body};
     font-family: ${theme.fontFamily.body};
+    left: ${isMenuOpen && `0`};
+    position: ${isMenuOpen && `fixed`};
+    right: ${isMenuOpen && `0`};
+    top: ${isMenuOpen && `-${scrollY}px`};
   }
 
   h1,

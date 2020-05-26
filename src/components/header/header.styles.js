@@ -102,6 +102,7 @@ export const nav = ({ isMenuOpen, theme }) => css`
     display: flex;
     flex-direction: column;
     left: 55%;
+    overflow-y: scroll;
     position: fixed;
     right: 0;
     transition: transform 0.3s ease-in-out;
