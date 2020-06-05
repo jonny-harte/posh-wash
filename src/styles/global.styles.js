@@ -19,6 +19,8 @@ const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
 
   body {
     ${theme.body};
+    background-color: #1c1c1c;
+    color: #fff;
     font-family: ${theme.fontFamily.body};
     left: ${isMenuOpen && `0`};
     position: ${isMenuOpen && `fixed`};
@@ -59,6 +61,10 @@ const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
   ul,
   pre {
     ${theme.content}
+  }
+
+  a {
+    color: inherit;
   }
 
   #gatsby-focus-wrapper {
