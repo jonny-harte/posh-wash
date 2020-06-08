@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container component should render correctly in the browser 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 30.599999999999998px 20.4px;
+}
+
+@media (orientation:portrait) {
+  .emotion-0 {
+    max-width: 600px;
+  }
+}
+
+@media (min-width:800px) {
+  .emotion-0 {
+    padding: 51px 20.4px;
+  }
+}
+
+@media (min-width:1025px) {
+  .emotion-0 {
+    max-width: 1300px;
+    padding: 71.39999999999999px 40.8px;
+  }
+}
+
+@media (min-width:1366px) {
+  .emotion-0 {
+    padding: 81.6px 40.8px;
+  }
+}
+
+.emotion-0 > * {
+  border: 2px solid #fff;
+  margin: 10.2px 0;
+  padding: 20.4px;
+}
+
+@media (orientation:landscape) {
+  .emotion-0 > * {
+    width: calc(50% - 10.2px);
+  }
+}
+
+@media (min-width:1025px) {
+  .emotion-0 > * {
+    width: calc(50% - 10.2px);
+  }
+}
+
+@media (min-width:1366px) {
+  .emotion-0 > * {
+    margin: 20.4px 0;
+    padding: 40.8px;
+    width: calc(50% - 20.4px);
+  }
+}
+
+.emotion-0 > * > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-0 > * > *:last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 > * h1 {
+  font-size: clamp(18px,5.625vw,24px);
+}
+
+<div
+    class="emotion-0"
+  >
+    <div>
+      Column 1
+    </div>
+    <div>
+      Column 2
+    </div>
+  </div>
+</DocumentFragment>
+`;
