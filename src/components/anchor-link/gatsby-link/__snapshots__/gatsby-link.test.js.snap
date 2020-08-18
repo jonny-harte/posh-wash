@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GatsbyLink Component should render correctly 1`] = `
+<DocumentFragment>
+  <a
+    href="/this%20should%20encode%20correctly"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`GatsbyLink Component should render with a clickEvent 1`] = `
+<DocumentFragment>
+  <a
+    href="/this%20should%20encode%20correctly"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;

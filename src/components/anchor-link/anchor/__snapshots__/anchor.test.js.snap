@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor Component should render correctly 1`] = `
+<DocumentFragment>
+  <a
+    href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Anchor Component should render with a clickEvent 1`] = `
+<DocumentFragment>
+  <a
+    href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Anchor Component should render without rel attributes if target is not "_blank" 1`] = `
+<DocumentFragment>
+  <a
+    href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
+    target="_self"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Anchor Component should render without target & rel attributes if href is not http 1`] = `
+<DocumentFragment>
+  <a
+    href="mailto:name@email.com"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;

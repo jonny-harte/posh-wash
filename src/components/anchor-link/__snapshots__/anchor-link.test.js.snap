@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`External Link should render correctly in the browser 1`] = `
+<DocumentFragment>
+  <a
+    href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Internal Link should render correctly in the browser 1`] = `
+<DocumentFragment>
+  <a
+    href="/this%20should%20encode%20correctly"
+    title="Some Title"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
