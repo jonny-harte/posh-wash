@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import AnchorLink from "@hartey11/gatsby-plugin-anchor-link"
+
+import AnchorLink from "../anchor-link/anchor-link.component"
 
 const MenuItem = ({ children, classes, clickEvent, href, target, title }) => (
   <li className={classes}>

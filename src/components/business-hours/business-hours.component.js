@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import AnchorLink from "@hartey11/gatsby-plugin-anchor-link"
 import { v4 as uuidv4 } from "uuid"
 
 /** @jsx jsx */
@@ -10,6 +9,8 @@ import { useGooglePlacesData, useMenuJson } from "../../hooks"
 import { getMenuItemByURL, isGooglePlaceOpen } from "../../utils"
 
 import * as styles from "./business-hours.styles"
+
+import AnchorLink from "../anchor-link/anchor-link.component"
 
 // TODO: Add manual dates from google like christmas and maybe add a manual override field too.
 export const PureBusinessHours = ({ isOpen, menu, today, weekdayText }) => {
