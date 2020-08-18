@@ -48,10 +48,10 @@ export const container = ({ columns, theme }) => css`
     }
 
     > * {
-      &:first-child {
+      &:first-of-type {
         margin-top: 0;
       }
-      &:last-child {
+      &:last-of-type {
         margin-bottom: 0;
       }
     }

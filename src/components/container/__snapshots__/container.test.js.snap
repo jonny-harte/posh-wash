@@ -71,11 +71,11 @@ exports[`Container component should render correctly in the browser 1`] = `
   }
 }
 
-.emotion-0 > * > *:first-child {
+.emotion-0 > * > *:first-of-type {
   margin-top: 0;
 }
 
-.emotion-0 > * > *:last-child {
+.emotion-0 > * > *:last-of-type {
   margin-bottom: 0;
 }
 
