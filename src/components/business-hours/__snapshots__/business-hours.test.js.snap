@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BusinessHours component should render correctly in the browser 1`] = `
+<DocumentFragment>
+  .emotion-1 a {
+  font-weight: bold;
+}
+
+.emotion-0 {
+  display: table-row;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.emotion-0 dt {
+  display: table-cell;
+  padding-right: 10px;
+}
+
+@media (min-width:800px) {
+  .emotion-0 dt {
+    padding-right: 20px;
+  }
+}
+
+.emotion-0 dd {
+  display: table-cell;
+}
+
+<section
+    class="emotion-1"
+  >
+    <h1>
+      We\`re 
+      <strong>
+        open
+      </strong>
+       Right Now
+    </h1>
+    <p>
+      <a
+        href="tel:+442072624050"
+        title="Phone Us"
+      >
+        Call us
+      </a>
+       to book an appointment or feel free to turn up and book on arrival.
+    </p>
+    <p>
+      Our usually business hours are:
+    </p>
+    <dl>
+      <div
+        class="emotion-0"
+      >
+        <dt>
+          monday
+        </dt>
+        <dd />
+      </div>
+    </dl>
+  </section>
+</DocumentFragment>
+`;

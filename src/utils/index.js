@@ -1,3 +1,7 @@
+export { default as getMenuItemByURL } from "./getMenuItemByURL/getMenuItemByURL"
 export * from "./isGooglePlaceOpen/isGooglePlaceOpen"
+export { default as isInternalLink } from "./isInternalLink/isInternalLink"
+export { default as isURLProtocol } from "./isURLProtocol/isURLProtocol"
+export { default as isNewTab } from "./isNewTab/isNewTab"
 export { default as telAlert } from "./telAlert/telAlert"
 export { default as fluidImageFragment } from "./fragments"

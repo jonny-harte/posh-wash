@@ -1,7 +1,8 @@
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Swiper from "react-id-swiper"
+import SwiperCore, { Autoplay, EffectFade, Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
 import { v4 as uuidv4 } from "uuid"
 
 /** @jsx jsx */
@@ -10,31 +11,24 @@ import { jsx } from "@emotion/core"
 // eslint-disable-next-line no-unused-vars
 import { fluidImageFragment } from "../../utils"
 
-import "swiper/css/swiper.css"
+import "swiper/swiper-bundle.css"
 import * as styles from "./hero-slider.styles"
 
-const params = {
-  autoplay: {
-    delay: 3000,
-  },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-    clickable: true,
-  },
-  preloadImages: false,
-  speed: 400,
-}
+SwiperCore.use([Autoplay, EffectFade, Pagination])
 
 export const PureHeroSlider = ({ images, slides }) => (
   <section css={styles.section}>
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <Swiper {...params}>
+    <Swiper
+      autoplay={{ delay: 3000 }}
+      effect="fade"
+      fadeEffect={{ crossFade: true }}
+      preloadImages={false}
+      speed={400}
+      pagination={{
+        type: "bullets",
+        clickable: true,
+      }}
+    >
       {slides.map(({ heading, imageName }) => {
         // Find image that matches slide image name.
         const image = images.find(obj => {
@@ -42,7 +36,7 @@ export const PureHeroSlider = ({ images, slides }) => (
         })
 
         return (
-          <div key={uuidv4()}>
+          <SwiperSlide key={uuidv4()}>
             <Img
               fluid={image.node.childImageSharp.fluid}
               fadeIn={false}
@@ -54,7 +48,7 @@ export const PureHeroSlider = ({ images, slides }) => (
                 <span dangerouslySetInnerHTML={{ __html: heading }} />
               </h1>
             </div>
-          </div>
+          </SwiperSlide>
         )
       })}
     </Swiper>

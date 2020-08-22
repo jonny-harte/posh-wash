@@ -1,14 +1,13 @@
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { isURLProtocol } from "@hartey11/gatsby-plugin-anchor-link"
 import Logo from "react-inlinesvg"
 
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
 import { useGooglePlacesData, useMenuJson } from "../../hooks"
-import { isGooglePlaceOpen, telAlert } from "../../utils"
+import { isGooglePlaceOpen, isURLProtocol, telAlert } from "../../utils"
 
 import * as styles from "./header.styles"
 import Menu from "../menu/menu-list.component"
