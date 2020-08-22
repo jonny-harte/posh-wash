@@ -71,16 +71,16 @@ exports[`Container component should render correctly in the browser 1`] = `
   }
 }
 
-.emotion-0 > * > *:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-0 > * > *:last-of-type {
+.emotion-0 > * > *:last-child {
   margin-bottom: 0;
 }
 
-.emotion-0 > * h1 {
+.emotion-0 h1 {
   font-size: clamp(18px,5.625vw,24px);
+}
+
+.emotion-0 h1:first-of-type {
+  margin-top: 0;
 }
 
 <div

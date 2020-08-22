@@ -47,17 +47,17 @@ export const container = ({ columns, theme }) => css`
       width: calc(${100 / columns}% - ${theme.baseSpacing()});
     }
 
-    > * {
-      &:first-of-type {
-        margin-top: 0;
-      }
-      &:last-of-type {
+    > *:last-child {
         margin-bottom: 0;
       }
     }
 
     h1 {
       font-size: clamp(18px, 5.625vw, ${theme.h4.fontSize});
+      
+      &:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 `
