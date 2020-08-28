@@ -3,7 +3,11 @@ import { graphql, useStaticQuery } from "gatsby"
 const useInstagramData = () => {
   return useStaticQuery(graphql`
     query InstagramQuery {
-      allInstaNode(limit: 12, filter: { mediaType: { eq: "GraphImage" } }) {
+      allInstaNode(
+        filter: { mediaType: { eq: "IMAGE" } }
+        limit: 1
+        sort: { fields: timestamp, order: DESC }
+      ) {
         edges {
           node {
             id
