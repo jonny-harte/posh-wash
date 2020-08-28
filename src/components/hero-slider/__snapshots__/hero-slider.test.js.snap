@@ -37,7 +37,7 @@ exports[`Hero Slider should render correctly in the browser 1`] = `
 
 @media (orientation:portrait) and (min-width:1025px) {
   .emotion-8 .swiper-slide {
-    height: calc(50vh - 61px);
+    height: calc(50vh - 60px);
   }
 }
 
@@ -55,7 +55,7 @@ exports[`Hero Slider should render correctly in the browser 1`] = `
 
 @media (orientation:landscape) and (min-width:1025px) {
   .emotion-8 .swiper-slide {
-    height: calc(100vh - 61px);
+    height: calc(100vh - 60px);
   }
 }
 
