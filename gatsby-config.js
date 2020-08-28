@@ -15,7 +15,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-lint-queries`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -72,6 +71,12 @@ module.exports = {
         access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
         instagram_id: process.env.INSTAGRAM_ID,
         username: process.env.INSTAGRAM_USER_ID,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-extract-schema",
+      options: {
+        dest: `${__dirname}/path/to/schema.json`,
       },
     },
   ],
