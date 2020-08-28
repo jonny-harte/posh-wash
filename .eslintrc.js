@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   root: true,
   env: {
@@ -40,8 +42,9 @@ module.exports = {
     "graphql/template-strings": [
       `error`,
       {
-        env: `relay`,
-        tagName: `graphql`,
+        env: "relay",
+        schemaJsonFilepath: path.resolve(__dirname, "./schema.json"),
+        tagName: "graphql",
       },
     ],
   },

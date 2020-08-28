@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-lint-queries`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -63,6 +64,12 @@ module.exports = {
       options: {
         placeIds: process.env.GOOGLE_PLACE_ID.split(" "),
         apiKey: process.env.GOOGLE_PLACES_KEY,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: process.env.INSTAGRAM_USER_ID,
       },
     },
   ],
