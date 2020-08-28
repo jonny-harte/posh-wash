@@ -5,7 +5,7 @@ const useInstagramData = () => {
     query InstagramQuery {
       allInstaNode(
         filter: { mediaType: { eq: "IMAGE" } }
-        limit: 1
+        limit: 12
         sort: { fields: timestamp, order: DESC }
       ) {
         edges {

@@ -1,5 +1,5 @@
 // TODO: use css grid for this layout.
-// TODO: use Access Token to get latest posts.
+// TODO: Update Access Token on build.
 // TODO: setup IFTTT to update on new post.
 // TODO: setup rebuild every 4 hours to update likes.
 
