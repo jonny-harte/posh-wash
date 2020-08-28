@@ -6,6 +6,7 @@ import { BusinessHours } from "../components/business-hours/business-hours.compo
 import Container from "../components/container/container.component"
 import { HeroSlider } from "../components/hero-slider/hero-slider.component"
 import Layout from "../components/layout"
+import RecentWork from "../components/recent-work/recent-work.component"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -28,6 +29,7 @@ const IndexPage = () => (
       </section>
       <BusinessHours />
     </Container>
+    <RecentWork />
   </Layout>
 )
 
