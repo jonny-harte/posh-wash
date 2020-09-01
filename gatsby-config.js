@@ -65,5 +65,19 @@ module.exports = {
         apiKey: process.env.GOOGLE_PLACES_KEY,
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
+        instagram_id: process.env.INSTAGRAM_ID,
+        username: process.env.INSTAGRAM_USER_ID,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-extract-schema",
+      options: {
+        dest: `${__dirname}/schema.json`,
+      },
+    },
   ],
 }

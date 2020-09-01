@@ -25,12 +25,12 @@ const theme = {
   header: {
     borderWidth: 1,
     height: {
-      mobile: 49,
-      tablet: 49,
+      mobile: 50,
+      tablet: 50,
       desktop: 60,
     },
     spacer(breakpoint) {
-      return this.height[breakpoint] + this.borderWidth
+      return this.height[breakpoint]
     },
   },
   heading: {
