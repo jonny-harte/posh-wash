@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-extract-schema",
       options: {
-        dest: `${__dirname}/path/to/schema.json`,
+        dest: `${__dirname}/schema.json`,
       },
     },
   ],

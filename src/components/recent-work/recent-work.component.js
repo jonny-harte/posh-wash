@@ -23,8 +23,6 @@ const RecentWork = () => {
     allInstaNode: { edges: posts },
   } = useInstagramData()
 
-  console.log(posts)
-
   // Find instagram URL in social menu.
   const instagramLink = menuSocial.find(obj => {
     return obj.href.includes("instagram")
