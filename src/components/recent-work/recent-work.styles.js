@@ -1,8 +1,6 @@
 import { css } from "@emotion/core"
 import { mediaQuery as mq } from "../../styles"
 
-// import GraphicComponent from "../graphic/graphic.component"
-
 export const recentWork = theme => css`
   padding: 0 ${theme.baseSpacing()};
 
@@ -11,7 +9,7 @@ export const recentWork = theme => css`
   }
 
   h1 {
-    font-size: clamp(18px, 5.625vw, ${theme.h1.fontSize});
+    font-size: clamp(18px, 5.625vw, ${theme.h4.fontSize});
     margin-top: 0;
   }
 

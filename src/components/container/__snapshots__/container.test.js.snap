@@ -49,6 +49,7 @@ exports[`Container component should render correctly in the browser 1`] = `
   border: 2px solid #fff;
   margin: 10.2px 0;
   padding: 20.4px;
+  width: 100%;
 }
 
 @media (orientation:landscape) {
