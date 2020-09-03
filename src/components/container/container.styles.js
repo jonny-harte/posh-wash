@@ -8,7 +8,7 @@ export const container = ({ columns, theme }) => css`
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  max-width: 900px;
+  max-width: 800px;
   padding: ${theme.baseSpacing(1.5)} ${theme.baseSpacing()};
 
   ${mq({ orientation: "portrait" })} {
@@ -20,7 +20,7 @@ export const container = ({ columns, theme }) => css`
   }
 
   ${mq("desktop")} {
-    max-width: ${theme.maxWidth}px;
+    max-width: ${columns > 1 ? `${theme.maxWidth}px` : ""};
     padding: ${theme.baseSpacing(3.5)} ${theme.baseSpacing(2)};
   }
 

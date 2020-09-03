@@ -3,7 +3,6 @@ import { css } from "@emotion/core"
 export const reviews = theme => css`
   margin-left: auto;
   margin-right: auto;
-  max-width: 700px;
 
   blockquote {
     display: flex;
