@@ -3,9 +3,10 @@
 // TODO: setup IFTTT to update on new post.
 // TODO: setup rebuild every 4 hours to update likes.
 
-/** @jsx jsx */
 import Img from "gatsby-image"
 import Heart from "react-inlinesvg"
+
+/** @jsx jsx */
 import { jsx } from "@emotion/core"
 
 import { useInstagramData, useMenuJson } from "../../hooks"
