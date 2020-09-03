@@ -32,19 +32,32 @@ export const container = ({ columns, theme }) => css`
     border: 2px solid #fff;
     margin: ${theme.baseSpacing(0.5)} 0;
     padding: ${theme.baseSpacing()};
+    width: 100%;
 
     ${mq({ orientation: "landscape" })} {
-      width: calc(${100 / columns}% - ${theme.baseSpacing(0.5)});
+      width: ${
+        columns > 1
+          ? `calc(${100 / columns}% - ${theme.baseSpacing(0.5)})`
+          : "100%"
+      };
     }
 
     ${mq("desktop")} {
-      width: calc(${100 / columns}% - ${theme.baseSpacing(0.5)});
+      width: ${
+        columns > 1
+          ? `calc(${100 / columns}% - ${theme.baseSpacing(0.5)})`
+          : "100%"
+      };
     }
 
     ${mq("widescreen-sm")} {
       margin: ${theme.baseSpacing()} 0;
       padding: ${theme.baseSpacing(2)};
-      width: calc(${100 / columns}% - ${theme.baseSpacing()});
+      width: ${
+        columns > 1
+          ? `calc(${100 / columns}% - ${theme.baseSpacing()})`
+          : "100%"
+      };
     }
 
     > *:last-child {
