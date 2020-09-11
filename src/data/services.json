@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "Hand Wash & Dry",
+    "description": "<p>A full wash of the exterior including a detailed wheel clean, windows are cleaned from the outside.</p>",
+    "price": 20,
+    "type": "valeting"
+  },
+  {
+    "heading": "Mini Valet",
+    "description": "<p>A full wash and wax for the exterior with a detailed wheel clean, the interior is vacuumed and wiped and the windows are cleaned.</p>",
+    "price": 25,
+    "type": "valeting"
+  },
+  {
+    "heading": "California Valet",
+    "description": "<p>As mini valet, but air-lined to stop drip marks and a detailed exhaust clean.</p>",
+    "price": 30,
+    "type": "valeting"
+  },
+  {
+    "heading": "Midi Valet",
+    "description": "<p>As California valet but with a surface enhancing wax, to create an attractive gloss.</p>",
+    "price": 60,
+    "type": "valeting"
+  },
+  {
+    "heading": "Interior Valet",
+    "description": "<p>Detailed work on the interior trim including carpet and upholstery shampoo. Leather is cleaned and conditioned.</p>",
+    "price": 100,
+    "type": "valeting"
+  },
+  {
+    "heading": "Exterior Valet (Hand Polish)",
+    "description": "<p>Detailed work on the exterior, hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior is vacuumed and wiped and the windows are cleaned.</p>",
+    "price": 85,
+    "type": "valeting"
+  },
+  {
+    "heading": "Exterior Valet (Machine Polish)",
+    "description": "<p>Detailed work on the exterior, hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior is vacuumed and wiped and the windows are cleaned.</p>",
+    "price": 150,
+    "type": "valeting"
+  },
+  {
+    "heading": "Showroom Valet",
+    "description": "<p>Detailed work on the interior and exterior. Hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior carpet and upholstery shampoo. Leather is cleaned and conditioned. Windows are cleaned.</p>",
+    "price": 150,
+    "type": "valeting"
+  },
+  {
+    "heading": "Alloy Wheel Refurbishment",
+    "description": "<p>Kerbed, scuffed or corroded Alloy wheels are refurbished to look as good as new. This service is a quick and easy way to get your alloy wheels back to factory condition and remove the unwanted marks from driving, parking and everyday use.</p>",
+    "price": 65,
+    "type": "wheels"
+  },
+  {
+    "heading": "Diamond Cut Polished Wheels",
+    "description": "<p>A process for repairing polished wheels on a specialist machine restoring to original condition. Wheel inserts are repaired if damaged or can be changed colour.</p>",
+    "price": 95,
+    "type": "wheels"
+  },
+  {
+    "heading": "Colour Change",
+    "description": "<p>Alloy wheels can be colour coded or painted to any desired colour, no matter how loud or outrageous it may be. The most popular trends include:</p><ul><li>Black or gray for a more sporty look.</li><li>Colour coding to match the bodywork.</li><li>Personalised colour coding to make your vehicle more unique.</li><li>Diamond cut wheels are also customisable. The painted inserts and polished face can create a two layer effect and <li>complements each other beautifully.</li></ul><p>The wheels are painted on the face and inside. Price includes repair to any damage on the wheels.</p>",
+    "price": 75,
+    "type": "wheels"
+  },
+  {
+    "heading": "Alloy Wheel Straightening",
+    "description": "<p>Driving over pot holes can lead to your wheels becoming buckled. Alloy wheels can be straightened using our specialist hydraulic equipment.</p><p>Signs that your wheel(s) may be buckled include:</p><ul><li>Vibration of the car when moving.</li><li>Deflation of the tyres.</li><li>Dents, leaks and rusting to the wheel.</li><li>Suspension failure.</li></ul>",
+    "price": 50,
+    "type": "wheels"
+  }
+]
