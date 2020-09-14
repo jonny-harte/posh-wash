@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid"
 import { fluidImageFragment } from "../utils"
 
 import Container from "../components/container/container.component"
-import Layout from "../components/layout"
 import PageHeader from "../components/page-header/page-header.component"
 import ProductCard from "../components/product-card/product-card.component"
 import ServiceFooter from "../components/service-footer/service-footer.component"
@@ -36,7 +35,7 @@ const ValetingPage = () => {
   `)
 
   return (
-    <Layout>
+    <>
       <SEO title="Valet Services" />
       <PageHeader heading="Valet Services" image={image} />
       <Container columns={2}>
@@ -50,7 +49,7 @@ const ValetingPage = () => {
         ))}
         <ServiceFooter />
       </Container>
-    </Layout>
+    </>
   )
 }
 

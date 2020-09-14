@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import { useEffect } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
@@ -9,12 +11,17 @@ import { useSiteMetadata } from "../hooks"
 import { globalStyles, mediaQuery as mq, theme } from "../styles"
 
 import Header from "./header/header.component"
-import { mapStateToProps } from "./header/menu-toggle.component"
+import {
+  mapStateToProps,
+  mapDispatchToProps,
+} from "./header/menu-toggle.component"
 import { Footer } from "./footer/footer.component"
 
-const Layout = ({ children, isMenuOpen, scrollY }) => {
+const Layout = ({ children, isMenuOpen, scrollY, toggleMenu }) => {
   const { title } = useSiteMetadata()
-
+  useEffect(() => {
+    toggleMenu(false)
+  })
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles({ isMenuOpen, scrollY, theme })} />
@@ -43,7 +50,8 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,
   scrollY: PropTypes.number.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
 }
 
 // eslint-disable-next-line react-redux/prefer-separate-component-file
-export default connect(mapStateToProps)(Layout)
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)
