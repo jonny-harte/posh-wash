@@ -89,6 +89,14 @@ const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
       opacity: 0.4;
     }
   }
+
+  .button {
+    ${theme.heading};
+    border: 2px solid #fff;
+    padding: ${theme.baseSpacing(0.5)} ${theme.baseSpacing()};
+    text-align: center;
+    text-decoration: none;
+  }
 `
 
 export default globalStyles
