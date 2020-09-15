@@ -8,7 +8,6 @@ import * as styles from "./product-card.styles"
 const ProductCard = ({ heading, description, price }) => (
   <article css={styles.productCard}>
     <h1>{heading}</h1>
-    {/* eslint-disable-next-line react/no-danger */}
     <div
       css={styles.description}
       dangerouslySetInnerHTML={{ __html: description }}

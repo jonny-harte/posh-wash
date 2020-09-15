@@ -44,7 +44,6 @@ export const PureHeroSlider = ({ images, slides }) => (
             />
             <div css={styles.title}>
               <h1>
-                {/* eslint-disable-next-line react/no-danger */}
                 <span dangerouslySetInnerHTML={{ __html: heading }} />
               </h1>
             </div>
