@@ -77,11 +77,15 @@ exports[`Container component should render correctly in the browser 1`] = `
 }
 
 .emotion-0 h1 {
-  font-size: clamp(18px,5.625vw,24px);
+  font-size: clamp(20px,6.25vw,24px);
 }
 
 .emotion-0 h1:first-of-type {
   margin-top: 0;
+}
+
+.emotion-0 h2 {
+  font-size: clamp(16px,5vw,20px);
 }
 
 <div

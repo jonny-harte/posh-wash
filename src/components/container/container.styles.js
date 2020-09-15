@@ -66,11 +66,15 @@ export const container = ({ columns, theme }) => css`
     }
 
     h1 {
-      font-size: clamp(18px, 5.625vw, ${theme.h4.fontSize});
+      font-size: clamp(20px, 6.25vw, ${theme.h4.fontSize});
       
       &:first-of-type {
         margin-top: 0;
       }
+    }
+
+    h2 {
+      font-size: clamp(16px, 5vw, ${theme.h5.fontSize});
     }
   }
 `

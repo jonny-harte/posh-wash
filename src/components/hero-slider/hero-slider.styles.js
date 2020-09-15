@@ -62,9 +62,9 @@ export const title = theme => css`
 
   h1 {
     ${theme.heading};
-    background-color: #000;
+    background-color: #1c1c1c;
     color: #fff;
-    font-size: clamp(18px, 5.625vw, ${theme.h1.fontSize});
+    font-size: clamp(20px, 6.25vw, ${theme.h1.fontSize});
     margin: 0;
     opacity: 0;
     padding: ${theme.baseSpacing()};
