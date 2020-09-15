@@ -69,6 +69,7 @@ export const logo = theme => css`
 
 export const menuOverlay = ({ isMenuOpen, theme }) => css`
   display: none;
+
   ${mq("desktop", true)} {
     appearance: none;
     background-color: rgba(0, 0, 0, 0.75);
@@ -85,6 +86,10 @@ export const menuOverlay = ({ isMenuOpen, theme }) => css`
     top: ${theme.header.spacer("tablet")}px;
     width: 100%;
     z-index: -1;
+  }
+
+  &:focus {
+    outline: none;
   }
 `
 

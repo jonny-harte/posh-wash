@@ -106,9 +106,9 @@ exports[`Hero Slider should render correctly in the browser 1`] = `
   -ms-letter-spacing: 0.1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background-color: #000;
+  background-color: #1c1c1c;
   color: #fff;
-  font-size: clamp(18px,5.625vw,48px);
+  font-size: clamp(20px,6.25vw,48px);
   margin: 0;
   opacity: 0;
   padding: 20.4px;

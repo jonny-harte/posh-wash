@@ -39,6 +39,7 @@ module.exports = {
     "emotion/import-from-emotion": "error",
     "emotion/styled-import": "error",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/no-danger": "off",
     "graphql/template-strings": [
       `error`,
       {

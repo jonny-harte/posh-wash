@@ -9,7 +9,7 @@ export const recentWork = theme => css`
   }
 
   h1 {
-    font-size: clamp(18px, 5.625vw, ${theme.h4.fontSize});
+    font-size: clamp(20px, 6.25vw, ${theme.h4.fontSize});
     margin-top: 0;
   }
 
