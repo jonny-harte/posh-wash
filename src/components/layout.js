@@ -8,20 +8,34 @@ import { Global, css, jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 
 import { useSiteMetadata } from "../hooks"
+import {
+  toggleMenu as toggleMenuAction,
+  updateRoute as updateRouteAction,
+} from "../state/app"
 import { globalStyles, mediaQuery as mq, theme } from "../styles"
 
 import Header from "./header/header.component"
-import {
-  mapStateToProps,
-  mapDispatchToProps,
-} from "./header/menu-toggle.component"
 import { Footer } from "./footer/footer.component"
 
-const Layout = ({ children, isMenuOpen, scrollY, toggleMenu }) => {
+const Layout = ({
+  children,
+  isMenuOpen,
+  path,
+  route,
+  scrollY,
+  toggleMenu,
+  updateRoute,
+}) => {
   const { title } = useSiteMetadata()
+
+  if (path !== route) {
+    updateRoute(path)
+  }
+
   useEffect(() => {
     toggleMenu(false)
-  })
+  }, [route, toggleMenu])
+
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles({ isMenuOpen, scrollY, theme })} />
@@ -49,8 +63,27 @@ const Layout = ({ children, isMenuOpen, scrollY, toggleMenu }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,
+  path: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired,
   scrollY: PropTypes.number.isRequired,
   toggleMenu: PropTypes.func.isRequired,
+  updateRoute: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = state => {
+  const { app } = state
+  return {
+    isMenuOpen: app.isMenuOpen,
+    scrollY: app.scrollY,
+    route: app.route,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleMenu: isOpen => dispatch(toggleMenuAction(isOpen)),
+    updateRoute: route => dispatch(updateRouteAction(route)),
+  }
 }
 
 // eslint-disable-next-line react-redux/prefer-separate-component-file
