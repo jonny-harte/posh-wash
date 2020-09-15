@@ -1,0 +1,16 @@
+[
+  {
+    "heading": "Brentford",
+    "description": "<p>This location is for <strong>wheel services only</strong>.</p>",
+    "address": "Unit 9B, Set Star Trading Estate,<br>Transport Avenue,<br>TW8 9HF",
+    "telephone": { "full": "+442088474050", "cta": "020 8847 4050" },
+    "directions": "http://maps.apple.com/?address=Unit+9B,+Set+Star+Trading+Estate,+Transport+Avenue,+TW8+9HF&t=m"
+  },
+  {
+    "heading": "Park Lane",
+    "description": "<p>We're located in the Q-Park car park and can be accessed heading north towards Marble Arch. Please <strong>sound your horn at the barrier</strong> and a member of staff will let you in.</p>",
+    "address": "Park Lane Car Park,<br>London,<br>W1K 7AN",
+    "telephone": { "full": "+442072624050", "cta": "020 7262 4050" },
+    "directions": "http://maps.apple.com/?address=Park+Lane+Car+Park,+London,+W1K+7AN&t=m"
+  }
+]
