@@ -54,7 +54,7 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    toggleMenu: open => dispatch(toggleMenuAction(open)),
+    toggleMenu: isOpen => dispatch(toggleMenuAction(isOpen)),
   }
 }
 
