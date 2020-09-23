@@ -93,6 +93,7 @@ const globalStyles = ({ isMenuOpen, scrollY, theme }) => css`
   .button {
     ${theme.heading};
     border: 2px solid #fff;
+    cursor: pointer;
     padding: ${theme.baseSpacing(0.5)} ${theme.baseSpacing()};
     text-align: center;
     text-decoration: none;
