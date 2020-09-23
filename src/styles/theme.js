@@ -23,7 +23,7 @@ const theme = {
     body: "Montserrat, sans-serif",
   },
   header: {
-    borderWidth: 1,
+    borderWidth: 2,
     height: {
       mobile: 50,
       tablet: 50,
