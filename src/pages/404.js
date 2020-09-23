@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Container from "../components/container/container.component"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+// TODO: Vertically align box in page.
 const NotFoundPage = () => (
-  <Layout>
+  <>
     <SEO title="404: Not found" />
     <Container>
       <section>
@@ -20,7 +20,7 @@ const NotFoundPage = () => (
         </p>
       </section>
     </Container>
-  </Layout>
+  </>
 )
 
 export default NotFoundPage
