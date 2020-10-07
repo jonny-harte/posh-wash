@@ -1,9 +1,17 @@
 import React from "react"
+import { OutboundLink as Link } from "gatsby-plugin-gtag"
 import PropTypes from "prop-types"
 import { isNewTab } from "../../../utils"
 
-const Anchor = ({ children, className, clickEvent, href, target, title }) => (
-  <a
+const OutboundLink = ({
+  children,
+  className,
+  clickEvent,
+  href,
+  target,
+  title,
+}) => (
+  <Link
     className={className}
     href={encodeURI(href)}
     onClick={e => clickEvent && clickEvent(e)}
@@ -12,10 +20,10 @@ const Anchor = ({ children, className, clickEvent, href, target, title }) => (
     title={title}
   >
     {children}
-  </a>
+  </Link>
 )
 
-Anchor.propTypes = {
+OutboundLink.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   clickEvent: PropTypes.func,
@@ -23,10 +31,10 @@ Anchor.propTypes = {
   href: PropTypes.string.isRequired,
   target: PropTypes.string,
 }
-Anchor.defaultProps = {
+OutboundLink.defaultProps = {
   className: null,
   clickEvent: null,
   target: null,
 }
 
-export default Anchor
+export default OutboundLink

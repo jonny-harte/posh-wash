@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import { isInternalLink } from "../../utils"
 
-import Anchor from "./anchor/anchor.component"
+import OutboundLink from "./outbound-link/outbound-link.component"
 import GatsbyLink from "./gatsby-link/gatsby-link.component"
 
 const AnchorLink = ({
@@ -26,7 +26,7 @@ const AnchorLink = ({
         {children}
       </GatsbyLink>
     ) : (
-      <Anchor
+      <OutboundLink
         className={className}
         clickEvent={clickEvent}
         href={href}
@@ -34,7 +34,7 @@ const AnchorLink = ({
         target={target}
       >
         {children}
-      </Anchor>
+      </OutboundLink>
     )}
   </>
 )

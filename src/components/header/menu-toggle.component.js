@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+// import { trackCustomEvent } from "gatsby-plugin-gtag"
 import PropTypes from "prop-types"
 import { Spin as Hamburger } from "hamburger-react"
 
@@ -26,7 +27,14 @@ const MenuToggle = ({ isMenuOpen, scrollY, toggleMenu }) => {
           distance="sm"
           duration={0.3}
           label="Menu Toggle"
-          toggle={() => toggleMenu(!isMenuOpen)}
+          toggle={() => {
+            toggleMenu(!isMenuOpen)
+            // trackCustomEvent({
+            //   category: "Menu Toggle",
+            //   action: "Click",
+            //   label: !isMenuOpen,
+            // })
+          }}
           toggled={isMenuOpen}
         />
       </div>
@@ -35,7 +43,13 @@ const MenuToggle = ({ isMenuOpen, scrollY, toggleMenu }) => {
         aria-label="Close Menu"
         type="button"
         css={theme => styles.menuOverlay({ theme, isMenuOpen })}
-        onClick={() => toggleMenu(!isMenuOpen)}
+        onClick={() => {
+          toggleMenu(!isMenuOpen)
+          // trackCustomEvent({
+          //   category: "Menu Close",
+          //   action: "Click",
+          // })
+        }}
       />
     </>
   )

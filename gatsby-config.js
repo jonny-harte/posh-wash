@@ -1,12 +1,21 @@
-require("dotenv").config()
+require(`dotenv`).config()
 
 module.exports = {
   siteMetadata: {
     title: `Posh Wash`,
     description: `London's number one hand car wash and alloy wheel refurbishment centre.`,
     author: `Jonathan Harte`,
+    siteUrl: `https://poshwash.london`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: "UA-25509309-3",
+        head: false,
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,12 +34,12 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-json`,
     {
@@ -55,13 +64,13 @@ module.exports = {
         // [optional] - if true will clean up after itself on the client, default:
         cleanupOnClient: true,
         // [optional] - name of key on `window` where serialized state will be stored, default:
-        windowKey: "__PRELOADED_STATE__",
+        windowKey: `__PRELOADED_STATE__`,
       },
     },
     {
       resolve: `gatsby-source-google-places`,
       options: {
-        placeIds: process.env.GOOGLE_PLACE_ID.split(" "),
+        placeIds: process.env.GOOGLE_PLACE_ID.split(` `),
         apiKey: process.env.GOOGLE_PLACES_KEY,
       },
     },
@@ -74,9 +83,18 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-extract-schema",
+      resolve: `gatsby-plugin-extract-schema`,
       options: {
         dest: `${__dirname}/schema.json`,
+      },
+    },
+    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://poshwash.london`,
+        sitemap: `https://poshwash.london/sitemap.xml`,
+        policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
   ],
