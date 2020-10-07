@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Anchor Component should render correctly 1`] = `
+exports[`OutboundLink Component should render correctly 1`] = `
 <DocumentFragment>
   <a
     href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
@@ -13,7 +13,7 @@ exports[`Anchor Component should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Anchor Component should render with a clickEvent 1`] = `
+exports[`OutboundLink Component should render with a clickEvent 1`] = `
 <DocumentFragment>
   <a
     href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
@@ -26,7 +26,7 @@ exports[`Anchor Component should render with a clickEvent 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Anchor Component should render without rel attributes if target is not "_blank" 1`] = `
+exports[`OutboundLink Component should render without rel attributes if target is not "_blank" 1`] = `
 <DocumentFragment>
   <a
     href="https://www.bbc.co.uk/this%20should%20encode%20correctly"
@@ -38,7 +38,7 @@ exports[`Anchor Component should render without rel attributes if target is not 
 </DocumentFragment>
 `;
 
-exports[`Anchor Component should render without target & rel attributes if href is not http 1`] = `
+exports[`OutboundLink Component should render without target and rel attributes if href is not http 1`] = `
 <DocumentFragment>
   <a
     href="mailto:name@email.com"

@@ -1,6 +1,6 @@
 import React from "react"
 import { render, cleanup, fireEvent } from "@testing-library/react"
-import Anchor from "./anchor.component"
+import OutboundLink from "./outbound-link.component"
 
 afterEach(cleanup)
 
@@ -8,39 +8,39 @@ const clickEvent = jest.fn()
 const title = "Some Title"
 const href = "https://www.bbc.co.uk/this should encode correctly"
 
-describe("Anchor Component", () => {
+describe("OutboundLink Component", () => {
   it("should render correctly", () => {
     const { asFragment } = render(
-      <Anchor isBrowser title={title} href={href}>
+      <OutboundLink isBrowser title={title} href={href}>
         Test
-      </Anchor>
+      </OutboundLink>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it("should render without target & rel attributes if href is not http", () => {
+  it("should render without target and rel attributes if href is not http", () => {
     const { asFragment } = render(
-      <Anchor isBrowser title={title} href="mailto:name@email.com">
+      <OutboundLink isBrowser title={title} href="mailto:name@email.com">
         Test
-      </Anchor>
+      </OutboundLink>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('should render without rel attributes if target is not "_blank"', () => {
     const { asFragment } = render(
-      <Anchor isBrowser target="_self" title={title} href={href}>
+      <OutboundLink isBrowser target="_self" title={title} href={href}>
         Test
-      </Anchor>
+      </OutboundLink>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it("should render with a clickEvent", () => {
     const { asFragment } = render(
-      <Anchor clickEvent={clickEvent} isBrowser title={title} href={href}>
+      <OutboundLink clickEvent={clickEvent} isBrowser title={title} href={href}>
         Test
-      </Anchor>
+      </OutboundLink>
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -49,9 +49,9 @@ describe("Anchor Component", () => {
     global.encodeURI = jest.fn()
 
     const { getByText } = render(
-      <Anchor clickEvent={clickEvent} isBrowser title={title} href={href}>
+      <OutboundLink clickEvent={clickEvent} isBrowser title={title} href={href}>
         Click Me
-      </Anchor>
+      </OutboundLink>
     )
 
     fireEvent.click(getByText("Click Me"))
