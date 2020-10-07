@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react"
 import { connect } from "react-redux"
 // import { trackCustomEvent } from "gatsby-plugin-gtag"
 import PropTypes from "prop-types"
@@ -16,6 +14,7 @@ import {
 import * as styles from "./contact-form.styles"
 
 const ContactForm = ({
+  botField,
   name,
   email,
   message,
@@ -26,9 +25,7 @@ const ContactForm = ({
 }) => {
   const encode = data => {
     return Object.keys(data)
-      .map(
-        key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
-      )
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       .join("&")
   }
 
@@ -40,6 +37,7 @@ const ContactForm = ({
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
+        botField,
         name,
         email,
         message,
@@ -153,6 +151,7 @@ const ContactForm = ({
 }
 
 ContactForm.propTypes = {
+  botField: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
@@ -165,6 +164,7 @@ ContactForm.propTypes = {
 const mapStateToProps = state => {
   const { app } = state
   return {
+    botField: app.botField,
     name: app.name,
     email: app.email,
     message: app.message,
