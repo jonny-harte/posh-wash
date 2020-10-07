@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+// import { trackCustomEvent } from "gatsby-plugin-gtag"
 import PropTypes from "prop-types"
 
 /** @jsx jsx */
@@ -47,9 +48,19 @@ const ContactForm = ({
       .then(() => {
         clearForm()
         updateNotification("Message received. We will be in contact shortly!")
+        // trackCustomEvent({
+        //   category: "Contact Form",
+        //   action: "Submit",
+        //   label: "Success",
+        // })
       })
       .catch(error => {
         updateNotification(error)
+        // trackCustomEvent({
+        //   category: "Contact Form",
+        //   action: "Submit",
+        //   label: error,
+        // })
       })
   }
   return (
@@ -116,7 +127,17 @@ const ContactForm = ({
           </label>
         </p>
         <p css={styles.controls}>
-          <button type="button" className="button" onClick={clearForm}>
+          <button
+            type="button"
+            className="button"
+            onClick={() => {
+              clearForm()
+              // trackCustomEvent({
+              //   category: "Contact Form",
+              //   action: "Reset",
+              // })
+            }}
+          >
             Reset
           </button>
           <button type="submit" className="button">

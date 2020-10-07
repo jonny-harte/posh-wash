@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import Logo from "react-inlinesvg"
 
 /** @jsx jsx */
@@ -8,6 +7,8 @@ import { jsx } from "@emotion/core"
 import { useMenuJson } from "../../hooks"
 
 import * as styles from "./footer.styles"
+
+import AnchorLink from "../anchor-link/anchor-link.component"
 import Menu from "../menu/menu-list.component"
 
 export const PureFooter = ({ menuItems, siteTitle }) => (
@@ -16,7 +17,7 @@ export const PureFooter = ({ menuItems, siteTitle }) => (
       <Menu label="Social Menu" items={menuItems} css={styles.menu} />
 
       <address className="h-card" css={styles.address}>
-        <a
+        <AnchorLink
           href={encodeURI(
             "https://maps.apple.com/?daddr=Park+Lane+Car+Park,+Park+Lane,+London,+W1K+7AN.&dirflg=d&t=m"
           )}
@@ -26,14 +27,14 @@ export const PureFooter = ({ menuItems, siteTitle }) => (
           <br />
           <span className="p-locality">London</span>,{" "}
           <span className="p-postal-code">W1K 7AN</span>
-        </a>
+        </AnchorLink>
       </address>
     </div>
 
     <div>
-      <Link to="/" title={siteTitle} css={styles.logo}>
+      <AnchorLink href="/" title={siteTitle} css={styles.logo}>
         <Logo src="../../graphics/logo-text.svg" />
-      </Link>
+      </AnchorLink>
 
       <p css={styles.copyright}>© 1986 - {new Date().getFullYear()}</p>
     </div>
