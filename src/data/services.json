@@ -2,19 +2,19 @@
   {
     "heading": "Hand Wash & Dry",
     "description": "<p>A full wash of the exterior including a detailed wheel clean, windows are cleaned from the outside.</p>",
-    "price": 20,
+    "price": 25,
     "type": "valeting"
   },
   {
     "heading": "Mini Valet",
     "description": "<p>A full wash and wax for the exterior with a detailed wheel clean, the interior is vacuumed and wiped and the windows are cleaned.</p>",
-    "price": 25,
+    "price": 30,
     "type": "valeting"
   },
   {
     "heading": "California Valet",
     "description": "<p>As mini valet, but air-lined to stop drip marks and a detailed exhaust clean.</p>",
-    "price": 30,
+    "price": 35,
     "type": "valeting"
   },
   {
@@ -55,7 +55,7 @@
   },
   {
     "heading": "Diamond Cut Polished Wheels",
-    "description": "<p>A process for repairing polished wheels on a specialist machine restoring to original condition. Wheel inserts are repaired if damaged or can be changed colour.</p>",
+    "description": "<p>A process for repairing polished wheels on a specialist machine. Wheel inserts are repaired if damaged or can be changed colour.</p>",
     "price": 95,
     "type": "wheels"
   },
