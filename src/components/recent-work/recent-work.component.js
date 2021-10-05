@@ -1,15 +1,15 @@
 // TODO: use css grid for this layout.
-// TODO: Update Access Token on build.
-// TODO: setup IFTTT to update on new post.
-// TODO: setup rebuild every 4 hours to update likes.
-
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Heart from "react-inlinesvg"
+import { v4 as uuidv4 } from "uuid"
 
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import { useInstagramData, useMenuJson } from "../../hooks"
+// eslint-disable-next-line no-unused-vars
+import { fluidImageFragment } from "../../utils"
+
+import { useMenuJson } from "../../hooks"
 
 import * as styles from "./recent-work.styles"
 
@@ -20,14 +20,25 @@ const RecentWork = () => {
     allMenuSocialJson: { nodes: menuSocial },
   } = useMenuJson()
 
-  const {
-    allInstaNode: { edges: posts },
-  } = useInstagramData()
-
   // Find instagram URL in social menu.
   const instagramLink = menuSocial.find(obj => {
     return obj.href.includes("instagram")
   })
+
+  const {
+    allFile: { edges: images },
+  } = useStaticQuery(graphql`
+    query RecentWorkImages {
+      allFile(filter: { relativeDirectory: { eq: "recent-work" } }) {
+        edges {
+          node {
+            name
+            ...fluidImageFragment
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <section css={styles.recentWork}>
@@ -36,33 +47,20 @@ const RecentWork = () => {
       </header>
 
       <ul>
-        {posts &&
-          posts.map(({ node: { caption, id, likes, localFile } }) => {
-            return (
-              <li key={id}>
-                <figure>
-                  <Img
-                    fluid={localFile.childImageSharp.fluid}
-                    alt={caption}
-                    title={caption}
-                  />
-                  {likes && (
-                    <figcaption>
-                      <Heart
-                        css={styles.heart}
-                        src="../../graphics/heart.svg"
-                      />
-                      {likes}
-                    </figcaption>
-                  )}
-                </figure>
-              </li>
-            )
-          })}
+        {images.map(({ node: { childImageSharp: image }, name }) => {
+          return (
+            <li key={uuidv4()}>
+              <figure>
+                <Img fluid={image.fluid} alt={name} title={name} />
+              </figure>
+            </li>
+          )
+        })}
       </ul>
 
       {instagramLink && (
         <footer>
+          {/* TODO: Add instagram logo svg */}
           <AnchorLink title={instagramLink.title} href={instagramLink.href}>
             {instagramLink.title}
           </AnchorLink>
