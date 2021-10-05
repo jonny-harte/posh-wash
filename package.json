@@ -24,7 +24,6 @@
     "gatsby-plugin-sharp": "^2.6.39",
     "gatsby-source-filesystem": "^2.3.33",
     "gatsby-source-google-places": "^0.0.6",
-    "gatsby-source-instagram": "^0.9.0",
     "gatsby-transformer-json": "^2.4.14",
     "gatsby-transformer-sharp": "^2.5.17",
     "hamburger-react": "^2.2.0",
