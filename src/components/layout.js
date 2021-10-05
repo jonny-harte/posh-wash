@@ -33,6 +33,7 @@ const Layout = ({
   }
 
   useEffect(() => {
+    // TODO: reset scrollY to 0 so page starts at the top.
     toggleMenu(false)
   }, [route, toggleMenu])
 
