@@ -31,7 +31,7 @@ export const PureBusinessHours = ({ isOpen, menu, today, weekdayText }) => {
         </AnchorLink>{" "}
         to book an appointment or feel free to turn up and book on arrival.
       </p>
-      <p>Our usually business hours are:</p>
+      <p>Our standard business hours are:</p>
       <dl>
         {weekdayText.map(text => {
           const split = text.split(": ")

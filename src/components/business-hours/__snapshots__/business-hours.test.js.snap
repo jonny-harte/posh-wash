@@ -47,7 +47,7 @@ exports[`BusinessHours component should render correctly in the browser 1`] = `
        to book an appointment or feel free to turn up and book on arrival.
     </p>
     <p>
-      Our usually business hours are:
+      Our standard business hours are:
     </p>
     <dl>
       <div
