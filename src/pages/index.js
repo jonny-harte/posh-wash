@@ -1,5 +1,6 @@
 import React from "react"
 
+// TODO: Change this to graphQL query.
 import heroSlides from "../data/hero-slides.json"
 
 import { BusinessHours } from "../components/business-hours/business-hours.component"
