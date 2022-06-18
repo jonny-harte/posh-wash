@@ -38,7 +38,7 @@
   {
     "heading": "Exterior Valet (Machine Polish)",
     "description": "<p>Detailed work on the exterior, hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior is vacuumed and wiped and the windows are cleaned.</p>",
-    "price": 150,
+    "price": 250,
     "type": "valeting"
   },
   {
@@ -56,7 +56,7 @@
   {
     "heading": "Diamond Cut Polished Wheels",
     "description": "<p>A process for repairing polished wheels on a specialist machine. Wheel inserts are repaired if damaged or can be changed colour.</p>",
-    "price": 95,
+    "price": 100,
     "type": "wheels"
   },
   {
