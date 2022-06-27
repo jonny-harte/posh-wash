@@ -32,7 +32,7 @@
   {
     "heading": "Exterior Valet (Hand Polish)",
     "description": "<p>Detailed work on the exterior, hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior is vacuumed and wiped and the windows are cleaned.</p>",
-    "price": 85,
+    "price": 100,
     "type": "valeting"
   },
   {
@@ -44,13 +44,13 @@
   {
     "heading": "Showroom Valet",
     "description": "<p>Detailed work on the interior and exterior. Hand polished 6 ways on the paintwork. Chrome trims, rubber trims and detailed wheel clean. Interior carpet and upholstery shampoo. Leather is cleaned and conditioned. Windows are cleaned.</p>",
-    "price": 150,
+    "price": 250,
     "type": "valeting"
   },
   {
     "heading": "Alloy Wheel Refurbishment",
     "description": "<p>Kerbed, scuffed or corroded Alloy wheels are refurbished to look as good as new. This service is a quick and easy way to get your alloy wheels back to factory condition and remove the unwanted marks from driving, parking and everyday use.</p>",
-    "price": 65,
+    "price": 75,
     "type": "wheels"
   },
   {
