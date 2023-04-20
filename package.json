@@ -21,7 +21,7 @@
     "gatsby-plugin-react-helmet": "^3.3.13",
     "gatsby-plugin-react-redux": "^1.1.0",
     "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sharp": "^2.6.39",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-source-filesystem": "^2.3.33",
     "gatsby-source-google-places": "^0.0.6",
     "gatsby-transformer-json": "^2.4.14",
